@@ -17,9 +17,9 @@
                 extend: {
                     colors: {
                         brand: {
-                            light: '#fdf2f8', // Rosa muy suave
-                            DEFAULT: '#db2777', // Rosa fuerte moderno
-                            dark: '#be185d',
+                            light: '#fffbeb', // Crema suave (Girasol)
+                            DEFAULT: '#f59e0b', // Amarillo Dorado
+                            dark: '#78350f', // Marrón (Centro del girasol)
                         }
                     },
                     fontFamily: {
@@ -37,16 +37,16 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
 
     <!-- Navbar (Fijo y limpio) -->
-    <nav class="fixed w-full z-50 glass-effect shadow-sm transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 glass-effect shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center cursor-pointer">
                     <span class="text-2xl font-bold text-brand-dark tracking-tighter">
-                        <i class="fa-solid fa-heart text-brand mr-2"></i>Lina-Riveros
+                        <i class="fa-solid fa-sun text-brand mr-2"></i>Lina-Riveros
                     </span>
                 </div>
                 
@@ -54,7 +54,7 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#inicio" class="text-gray-600 hover:text-brand font-medium transition">Inicio</a>
                     <a href="#coleccion" class="text-gray-600 hover:text-brand font-medium transition">Colección</a>
-                    <a href="#nosotros" class="text-gray-600 hover:text-brand font-medium transition">Nosotros</a>
+                    <a href="nosotros.html" class="text-gray-600 hover:text-brand font-medium transition">Nosotros</a>
                 </div>
 
                 <!-- Iconos Acción -->
@@ -63,26 +63,41 @@
                         <i class="fa-solid fa-shopping-bag text-xl"></i>
                         <span class="absolute -top-1 -right-2 bg-brand text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
                     </button>
+                    
+                    <!-- Botón Menú Móvil (Hamburguesa) -->
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-gray-600 hover:text-brand focus:outline-none ml-2 p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Inicio</a>
+                <a href="#coleccion" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Colección</a>
+                <a href="nosotros.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">Nosotros</a>
             </div>
         </div>
     </nav>
 
-    <!-- Sección de Bienvenida (Ahora de primero) -->
-    <section id="nosotros" class="relative pt-28 pb-12 lg:pt-36 lg:pb-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Sección de Bienvenida (Ahora en primer lugar) -->
+    <section id="inicio" class="relative pt-32 pb-12 lg:pt-48 lg:pb-12 bg-white scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="relative">
                     <div class="absolute -inset-4 bg-brand-light rounded-xl transform -rotate-2"></div>
                     <img src="imagenes/descarga (1).jpg" alt="Bienvenida" class="relative rounded-xl shadow-lg w-full object-cover h-80">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Bienvenidos a Lina-Riveros</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Bienvenidos a Lina-Riveros</h2>
                     <p class="text-gray-500 text-lg mb-6">
                         En Lina-Riveros, creemos que los pequeños detalles hacen la diferencia. Nuestra misión es ofrecerte productos que combinen diseño moderno con la máxima comodidad para que te sientas increíble.
                     </p>
                     <p class="text-gray-500 text-lg">
-                        Explora nuestra colección exclusiva de medias, termos y pijamas seleccionados especialmente para ti. ¡Calidad garantizada y estilo único en cada pedido!
+                        Explora nuestra colección exclusiva de medias, termos y pijamas seleccionados especialmente para ti.
                     </p>
                 </div>
             </div>
@@ -90,12 +105,12 @@
     </section>
 
     <!-- Hero Section (Impacto visual) -->
-    <section id="inicio" class="relative py-16 overflow-hidden bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section class="relative py-12 lg:py-20 overflow-hidden bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left z-10">
                     <span class="text-brand font-semibold tracking-wider uppercase text-sm">Nueva Colección 2026</span>
-                    <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                    <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                         Comodidad que <br> <span class="text-brand">enamora</span>.
                     </h1>
                     <p class="mt-4 text-lg text-gray-500 max-w-lg mx-auto lg:mx-0">
@@ -117,15 +132,15 @@
                     <div id="hero-carousel" class="relative h-full w-full rounded-2xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition duration-500">
                         <!-- Slide 1 -->
                         <div class="absolute inset-0 transition-opacity duration-1000 opacity-100">
-                            <img src="imagenes/descarga (2).jpg" class="object-cover w-full h-full" alt="Pijama Modelo">
+                            <img src="imagenes/descarga (2).jpg" class="object-contain bg-gray-100 w-full h-full" alt="Pijama Modelo">
                         </div>
                         <!-- Slide 2 -->
                         <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
-                            <img src="imagenes/descarga (3).jpg" class="object-cover w-full h-full" alt="Pijama Cozy">
+                            <img src="imagenes/descarga (3).jpg" class="object-contain bg-gray-100 w-full h-full" alt="Pijama Cozy">
                         </div>
                         <!-- Slide 3 -->
                         <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
-                            <img src="imagenes/images.jpg" class="object-cover w-full h-full" alt="Pijama Estilo">
+                            <img src="imagenes/images.jpg" class="object-contain bg-gray-100 w-full h-full" alt="Pijama Estilo">
                         </div>
                     </div>
                 </div>
@@ -140,21 +155,21 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
-                    <img src="imagenes/descarga (3).jpg" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" alt="Medias">
+                    <img src="imagenes/descarga (3).jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Medias">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Medias</h3>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
-                    <img src="imagenes/images.jpg" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" alt="Termos">
+                    <img src="imagenes/images.jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Termos">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Termos</h3>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
-                    <img src="imagenes/descarga (2).jpg" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" alt="Pijamas">
+                    <img src="imagenes/descarga (2).jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Pijamas">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Pijamas</h3>
                     </div>
@@ -164,73 +179,96 @@
     </section>
 
     <!-- Productos Destacados -->
-    <section id="coleccion" class="py-16 bg-gray-50">
+    <section id="coleccion" class="py-16 bg-gray-50 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Lo más vendido</h2>
-                <p class="text-gray-500 mt-2">Selección exclusiva para ti</p>
+                <h2 class="text-3xl font-bold text-gray-900">Nuestra Colección</h2>
+                <p class="text-gray-500 mt-2">Diseños únicos para alegrar tu día</p>
+                
+                <!-- Filtros de Categoría -->
+                <div class="flex flex-wrap justify-center gap-3 mt-8">
+                    <button onclick="filterSelection('all', this)" class="filter-btn px-6 py-2 rounded-full border border-brand bg-brand text-white font-medium transition focus:outline-none shadow-sm">Todo</button>
+                    <button onclick="filterSelection('pijamas', this)" class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 bg-white hover:border-brand hover:text-brand font-medium transition focus:outline-none shadow-sm">Pijamas</button>
+                    <button onclick="filterSelection('termos', this)" class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 bg-white hover:border-brand hover:text-brand font-medium transition focus:outline-none shadow-sm">Termos</button>
+                    <button onclick="filterSelection('medias', this)" class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 bg-white hover:border-brand hover:text-brand font-medium transition focus:outline-none shadow-sm">Medias</button>
+                </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Producto 1 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                <div class="product-card pijama bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
                     <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (2).jpg" class="object-cover w-full h-full" alt="Pijama">
+                        <img src="imagenes/descarga (2).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Pijama">
                         <span class="absolute top-2 left-2 bg-brand text-white text-xs font-bold px-2 py-1 rounded">Nuevo</span>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Pijama Seda Soft</h3>
                     <p class="text-gray-500 text-sm mb-3">Tacto suave y fresco</p>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-bold text-gray-900">$85.000</span>
-                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                        <a href="https://wa.me/573000000000?text=Hola!%20Me%20interesa%20la%20Pijama%20Seda%20Soft" target="_blank" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
                             <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Producto 2 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                <div class="product-card termos bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
                     <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/images.jpg" class="object-cover w-full h-full" alt="Termo">
+                        <img src="imagenes/images.jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Termo">
                     </div>
-                    <h3 class="text-lg font-semibold text-gray-800">Termo Inteligente</h3>
-                    <p class="text-gray-500 text-sm mb-3">Mantiene 24h frío</p>
+                    <h3 class="text-lg font-semibold text-gray-800">Termo Stitch</h3>
+                    <p class="text-gray-500 text-sm mb-3">Edición Especial</p>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-bold text-gray-900">$45.000</span>
-                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                        <a href="https://wa.me/573000000000?text=Hola!%20Me%20interesa%20el%20Termo%20Stitch" target="_blank" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
                             <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Producto 3 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                <div class="product-card medias bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
                     <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (3).jpg" class="object-cover w-full h-full" alt="Medias">
+                        <img src="imagenes/descarga (3).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Medias">
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Medias Pattern</h3>
                     <p class="text-gray-500 text-sm mb-3">Diseños divertidos</p>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-bold text-gray-900">$15.000</span>
-                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                        <a href="https://wa.me/573000000000?text=Hola!%20Me%20interesan%20las%20Medias%20Pattern" target="_blank" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
                             <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Producto 4 -->
-                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                <div class="product-card pijama termos medias bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
                     <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (1).jpg" class="object-cover w-full h-full" alt="Kit">
+                        <img src="imagenes/descarga (1).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Kit">
                         <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-10%</span>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Kit Regalo Pareja</h3>
                     <p class="text-gray-500 text-sm mb-3">2 Termos + 2 Medias</p>
                     <div class="flex justify-between items-center">
                         <span class="text-xl font-bold text-gray-900">$110.000</span>
-                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                        <a href="https://wa.me/573000000000?text=Hola!%20Me%20interesa%20el%20Kit%20Regalo" target="_blank" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
                             <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Producto 5 (Extra para rellenar) -->
+                <div class="product-card pijama bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
+                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
+                        <img src="imagenes/descarga (2).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Pijama">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Pijama Verano</h3>
+                    <p class="text-gray-500 text-sm mb-3">Frescura total</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">$80.000</span>
+                        <a href="https://wa.me/573000000000?text=Hola!%20Me%20interesa%20la%20Pijama%20Verano" target="_blank" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -302,6 +340,29 @@
             carouselSlides[activeSlide].classList.remove('opacity-0');
             carouselSlides[activeSlide].classList.add('opacity-100');
         }, 3500); // Cambia cada 3.5 segundos
+    </script>
+
+    <!-- Script para Filtros -->
+    <script>
+        function filterSelection(category, btn) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Actualizar botones
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-brand', 'text-white', 'border-brand');
+                b.classList.add('text-gray-600', 'border-gray-200', 'bg-white');
+            });
+            btn.classList.remove('text-gray-600', 'border-gray-200', 'bg-white');
+            btn.classList.add('bg-brand', 'text-white', 'border-brand');
+        }
     </script>
 
 </body>
