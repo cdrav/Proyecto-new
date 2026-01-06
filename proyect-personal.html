@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Estilo & Confort</title>
+    <!-- Tailwind CSS para diseño moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#fdf2f8', // Rosa muy suave
+                            DEFAULT: '#db2777', // Rosa fuerte moderno
+                            dark: '#be185d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .scroll-hidden::-webkit-scrollbar { display: none; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar (Fijo y limpio) -->
+    <nav class="fixed w-full z-50 glass-effect shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="text-2xl font-bold text-brand-dark tracking-tighter">
+                        <i class="fa-solid fa-heart text-brand mr-2"></i>Lina-Riveros
+                    </span>
+                </div>
+                
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-brand font-medium transition">Inicio</a>
+                    <a href="#coleccion" class="text-gray-600 hover:text-brand font-medium transition">Colección</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-brand font-medium transition">Nosotros</a>
+                </div>
+
+                <!-- Iconos Acción -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-brand transition relative">
+                        <i class="fa-solid fa-shopping-bag text-xl"></i>
+                        <span class="absolute -top-1 -right-2 bg-brand text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">2</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Bienvenida (Ahora de primero) -->
+    <section id="nosotros" class="relative pt-28 pb-12 lg:pt-36 lg:pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-light rounded-xl transform -rotate-2"></div>
+                    <img src="imagenes/descarga (1).jpg" alt="Bienvenida" class="relative rounded-xl shadow-lg w-full object-cover h-80">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Bienvenidos a Lina-Riveros</h2>
+                    <p class="text-gray-500 text-lg mb-6">
+                        En Lina-Riveros, creemos que los pequeños detalles hacen la diferencia. Nuestra misión es ofrecerte productos que combinen diseño moderno con la máxima comodidad para que te sientas increíble.
+                    </p>
+                    <p class="text-gray-500 text-lg">
+                        Explora nuestra colección exclusiva de medias, termos y pijamas seleccionados especialmente para ti. ¡Calidad garantizada y estilo único en cada pedido!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section (Impacto visual) -->
+    <section id="inicio" class="relative py-16 overflow-hidden bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left z-10">
+                    <span class="text-brand font-semibold tracking-wider uppercase text-sm">Nueva Colección 2026</span>
+                    <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
+                        Comodidad que <br> <span class="text-brand">enamora</span>.
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-500 max-w-lg mx-auto lg:mx-0">
+                        Descubre nuestras medias con diseño, termos aesthetic y pijamas que te harán soñar. Calidad premium para tu día a día.
+                    </p>
+                    <div class="mt-8 flex justify-center lg:justify-start gap-4">
+                        <a href="#coleccion" class="px-8 py-3 bg-brand text-white font-semibold rounded-full shadow-lg hover:bg-brand-dark transition transform hover:-translate-y-1">
+                            Ver Productos
+                        </a>
+                        <a href="https://wa.me/573000000000" target="_blank" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
+                            Escribir al WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- Imagen Hero (Placeholder de Unsplash) -->
+                <div class="relative h-96 w-full">
+                    <div class="absolute inset-0 bg-brand-light rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+                    <!-- Carrusel de Pijamas -->
+                    <div id="hero-carousel" class="relative h-full w-full rounded-2xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition duration-500">
+                        <!-- Slide 1 -->
+                        <div class="absolute inset-0 transition-opacity duration-1000 opacity-100">
+                            <img src="imagenes/descarga (2).jpg" class="object-cover w-full h-full" alt="Pijama Modelo">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
+                            <img src="imagenes/descarga (3).jpg" class="object-cover w-full h-full" alt="Pijama Cozy">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
+                            <img src="imagenes/images.jpg" class="object-cover w-full h-full" alt="Pijama Estilo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-bold text-center mb-10">Nuestras Categorías</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
+                    <img src="imagenes/descarga (3).jpg" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" alt="Medias">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
+                        <h3 class="text-white text-2xl font-bold">Medias</h3>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
+                    <img src="imagenes/images.jpg" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" alt="Termos">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
+                        <h3 class="text-white text-2xl font-bold">Termos</h3>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
+                    <img src="imagenes/descarga (2).jpg" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110" alt="Pijamas">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
+                        <h3 class="text-white text-2xl font-bold">Pijamas</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section id="coleccion" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Lo más vendido</h2>
+                <p class="text-gray-500 mt-2">Selección exclusiva para ti</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Producto 1 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
+                        <img src="imagenes/descarga (2).jpg" class="object-cover w-full h-full" alt="Pijama">
+                        <span class="absolute top-2 left-2 bg-brand text-white text-xs font-bold px-2 py-1 rounded">Nuevo</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Pijama Seda Soft</h3>
+                    <p class="text-gray-500 text-sm mb-3">Tacto suave y fresco</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">$85.000</span>
+                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
+                        <img src="imagenes/images.jpg" class="object-cover w-full h-full" alt="Termo">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Termo Inteligente</h3>
+                    <p class="text-gray-500 text-sm mb-3">Mantiene 24h frío</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">$45.000</span>
+                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
+                        <img src="imagenes/descarga (3).jpg" class="object-cover w-full h-full" alt="Medias">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Medias Pattern</h3>
+                    <p class="text-gray-500 text-sm mb-3">Diseños divertidos</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">$15.000</span>
+                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4">
+                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
+                        <img src="imagenes/descarga (1).jpg" class="object-cover w-full h-full" alt="Kit">
+                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-10%</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Kit Regalo Pareja</h3>
+                    <p class="text-gray-500 text-sm mb-3">2 Termos + 2 Medias</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xl font-bold text-gray-900">$110.000</span>
+                        <button class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Pago Seguro (PSE) -->
+    <section class="py-12 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-xl font-semibold text-gray-800 mb-6">Pagos seguros y fáciles</h3>
+            <div class="flex justify-center items-center gap-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-500">
+                <!-- Logo PSE Simulado -->
+                <div class="flex flex-col items-center">
+                    <img src="imagenes/logo-pse.png" alt="PSE" class="h-16 object-contain">
+                    <span class="text-xs text-gray-500 mt-2">Débito Bancario</span>
+                </div>
+                <!-- Otros métodos -->
+                <i class="fa-brands fa-cc-visa text-4xl text-blue-900"></i>
+                <i class="fa-brands fa-cc-mastercard text-4xl text-red-600"></i>
+                <i class="fa-solid fa-money-bill-wave text-4xl text-green-600"></i>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">Tus transacciones están protegidas con encriptación SSL.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-bold mb-4">TuMarca</h4>
+                <p class="text-gray-400 text-sm">
+                    Emprendimiento hecho con amor. Llevamos comodidad y estilo a la puerta de tu casa.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-brand transition">Rastrear Pedido</a></li>
+                    <li><a href="#" class="hover:text-brand transition">Política de Envíos</a></li>
+                    <li><a href="#" class="hover:text-brand transition">Cambios y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contáctanos</h4>
+                <p class="text-gray-400 text-sm mb-2"><i class="fa-brands fa-whatsapp mr-2"></i> +57 300 000 0000</p>
+                <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> lina-riveros.com</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-xs">
+            &copy; 2026 Desarrollado por Cristian Ruiz. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/573000000000?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
+       target="_blank"
+       class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Script para el Carrusel -->
+    <script>
+        const carouselSlides = document.querySelectorAll('#hero-carousel > div');
+        let activeSlide = 0;
+        setInterval(() => {
+            carouselSlides[activeSlide].classList.remove('opacity-100');
+            carouselSlides[activeSlide].classList.add('opacity-0');
+            activeSlide = (activeSlide + 1) % carouselSlides.length;
+            carouselSlides[activeSlide].classList.remove('opacity-0');
+            carouselSlides[activeSlide].classList.add('opacity-100');
+        }, 3500); // Cambia cada 3.5 segundos
+    </script>
+
+</body>
+</html>
